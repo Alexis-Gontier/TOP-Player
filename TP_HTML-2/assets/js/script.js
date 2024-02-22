@@ -1,5 +1,5 @@
-const audio = document.getElementById('monAudio');
-const volumeControl = document.getElementById('volumeControl');
+let audio = document.getElementById('monAudio');
+let volumeControl = document.getElementById('volumeControl');
 
 function toggleAudio() {
   if (audio.paused) {
@@ -15,19 +15,12 @@ volumeControl.addEventListener('input', () => {
 });
 
 
-// Sélection de l'élément à copier
-var slideElement = document.querySelector(".slide");
+let slideElement = document.querySelector(".slide");
+let topPageElement = document.querySelector('.top-page');
 
-// Sélection de l'élément où les copies seront ajoutées
-var topPageElement = document.querySelector('.top-page');
+let nombreDeCopies = 3; 
 
-// Nombre de copies à créer
-var nombreDeCopies = 3; // Vous pouvez changer ce nombre selon vos besoins
-
-for (var i = 0; i < nombreDeCopies; i++) {
-    // Cloner l'élément avec la classe "slide"
-    var copy = slideElement.cloneNode(true);
-    
-    // Ajouter la copie à l'élément avec la classe "top-page"
+for (let i = 0; i < nombreDeCopies; i++) {
+    let copy = slideElement.cloneNode(true);
     topPageElement.appendChild(copy);
 }
